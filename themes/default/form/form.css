@@ -1,0 +1,376 @@
+input[type="text"]::-ms-clear{
+    display:none;
+}
+*:focus,
+input,button,select,textarea {
+  outline: none; 
+}
+.nex-clear { clear:both;}
+.nex-form {
+	display: table;
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: separate;
+	line-height:16px;
+}
+
+.nex-form-display-inline {
+	display:inline-table;
+	vertical-align: middle;
+}
+
+.nex-form-display-box {
+	display: block;
+}
+
+.nex-form-disabled {
+	opacity: 0.7; 
+	filter: alpha(opacity=70);
+}
+.nex-form-readonly *,
+.nex-form-disabled * {
+	cursor:default !important;	
+}
+
+/*重要：解决inline-block会出现上下间隙问题*/
+/*
+.nex-form-display-inline,
+.nex-form-display-inline-block {
+	vertical-align:top;
+}
+*/
+.nex-form > *,
+.nex-form-trigger-wrap > * {
+	display: table-cell;
+	vertical-align:middle;
+}
+
+.nex-form-display-box > * {
+	display:block;	
+}
+
+.nex-form-label {
+	display: table-cell;
+	overflow:hidden;
+    padding-right: 5px;
+}
+
+.nex-form-body {
+	display: table-cell;
+	vertical-align:middle;
+	height:100%;
+	position:relative;
+	/*overflow:hidden;*/
+	overflow:visible;
+}
+
+.nex-form-display-box .nex-form-body {
+	display:block;	
+}
+
+
+.nex-form-field{
+	margin: 0;
+	padding: 3px 4px;
+	display: block;
+	border: 0;
+	border-radius: 0;
+	background: repeat-x 0 0;
+	width: 100%;
+	height: 100%;
+	min-height:22px;
+}
+/**
+在不设置高度的情况下 ie8下 input的最小高度是 17px
+*/
+.boxsizing-mm-fixed .nex-form-field {
+	min-height: 17px;
+	padding-bottom:2px;
+}
+
+
+
+/*label css*/
+.nex-form-label-top {
+	display: table-row;
+	padding-top:0;
+	padding-right:0;
+}
+.label-text-left {
+	text-align:left;	
+}
+.label-text-center {
+	text-align:center;	
+}
+.label-text-right {
+	text-align:right;	
+}
+
+.nex-form-label-text {
+  overflow:hidden;
+}
+
+.nex-form-label-left {
+	padding-right:5px;
+}
+.nex-form-label-right { 
+	padding-left:5px;
+	padding-right:0;
+}
+
+.label-text-valing-top {
+	padding-top:4px;/*3(padding-top)+1(border)*/
+	vertical-align:top;	
+}
+.label-text-valing-middle {
+	vertical-align:middle;	
+}
+.label-text-valing-bottom {
+	padding-bottom:4px;/*3(padding-bottom)+1(border)*/
+	vertical-align:bottom;	
+}
+.nex-form-type-base >.nex-form-label {
+	padding:0;	
+}
+
+.nex-form-trigger-wrap {
+	display: table;
+    width: 100%;
+    height: 100%;	
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c1c1c1 #d9d9d9 #d9d9d9;
+}
+/*.nex-form-trigger-wrap:hover,*/
+.nex-form-trigger-wrap-over,
+.nex-form-trigger-wrap-focus {
+	border-color: #3892d3;
+}
+
+.nex-form-input-wrap {
+	position:relative;	
+}
+
+/*displafield*/
+.nex-form-type-display {
+	cursor: default;	
+}
+.nex-form-display-body > .nex-form-trigger-wrap {
+	border-color: transparent;
+}
+
+.nex-form-field-display {
+	padding-top:3px;
+	overflow:hidden;
+}
+/*
+textareafield
+*/
+.nex-form-field-textarea {
+	min-height:40px;
+	resize: none;	
+}
+.boxsizing-mm-fixed .nex-form-textarea {
+	min-height: 34px;
+}
+
+/*listbox*/
+.nex-form-list-wrap {
+	border-width: 1px;
+    border-style: solid;
+    border-color: #c1c1c1 #d9d9d9 #d9d9d9;
+}
+.nex-form-list-wrap-over,
+.nex-form-list-wrap-focus {
+	border-color: #3892d3;
+}
+.nex-form-listbox-body {
+	vertical-align:top;	
+}
+.nex-form-field-listCt {
+	/*
+	* ie9 width:100%会有问题
+	*/
+	width:auto;
+	height:auto;
+}
+
+.nex-form-field-listbox {
+	padding:0;
+	overflow:auto;
+}
+
+.nex-form-listbox-item {
+	padding:3px;
+	cursor:pointer;
+}
+/*.nex-form-listbox-item-nowrap {
+	overflow: hidden;
+	white-space: nowrap;
+	word-wrap: normal;
+	text-overflow: ellipsis;	
+}*/
+.nex-form-listbox-item-selected {
+	background:#30bdeb;
+	color:#FFF;
+}
+
+.nex-form-listbox-item-over {
+	background:#30bde0;
+	color:#FFF;
+}
+.nex-form-listbox-item-disabled {
+	opacity: 0.5; 
+	filter: alpha(opacity=50);
+	cursor: default !important;
+}
+.nex-form-item-separator {
+	padding:4px 0px; 
+	overflow:hidden; 
+	position:relative;
+}
+.nex-form-line-h {
+	/*height:1px;
+	overflow:hidden;
+	background:#d7d7d7;*/
+	/*--兼容IE6的写法--*/
+	height: 0px;
+	overflow:hidden;
+	border-bottom:1px solid #d7d7d7;
+}
+.nex-ie6 .nex-form-line-h {
+	height: auto;
+	overflow:hidden;
+	border-bottom:1px solid #d7d7d7;
+}
+
+/**
+placeholder css
+*/
+.nex-form-placeholder {
+	display:block;
+	visibility: visible;
+	color:#BBA9A9;
+	position:absolute;
+	line-height:16px;
+	left:3px;
+	top:3px;
+	cursor:text;
+	display:none;
+}
+.nex-form-placeholder-show {
+	display:block;	
+}
+
+/*hiddenfield*/
+.nex-form-type-hidden {
+	display:none;	
+}
+/*trigger*/
+.nex-form-trigger {
+	display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: hidden;
+	text-align:center;
+    background-repeat: no-repeat;
+    white-space: nowrap;
+	width:22px;
+}
+.nex-form-trigger-default {
+	background: white url(images/trigger.png) no-repeat;
+    background-position: 0 center;
+}
+
+
+/*selectfield*/
+.nex-form-trigger-select {
+    background: white url(images/trigger.png) no-repeat;
+    background-position: 0 center;
+    width: 22px;	
+}
+.nex-form-field-select {
+	overflow:hidden;	
+}
+.nex-form-trigger-wrap-over .nex-form-trigger-select,
+.nex-form-trigger-wrap-focus .nex-form-trigger-select {
+	background-position: -22px center;
+}
+
+/*spinner*/
+.nex-form-spinner-icon {
+	background-image:url(./images/spinner.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.nex-form-spinner-up,
+.nex-form-spinner-down {
+	height: 11px;
+	overflow:hidden;
+}
+.nex-form-spinner-up {
+	background-position:0 0;
+}
+.nex-form-spinner-down {
+	background-position:0 -11px;
+}
+.nex-form-spinner-up:hover {
+	background-position:-22px 0;
+}
+.nex-form-spinner-down:hover {
+	background-position:-22px -11px;
+}
+.nex-form-spinner-up:active {
+	background-position:-44px 0;
+}
+.nex-form-spinner-down:active {
+	background-position:-44px -11px;
+}
+
+/*checkboxfield radio*/
+.nex-form-field-radio,
+.nex-form-field-checkbox {
+	padding:3px 4px;	
+}
+.nex-form-radio-body,
+.nex-form-checkbox-body {
+	border: none;
+}
+.nex-form-radio-item,
+.nex-form-checkbox-item {
+	padding:3px;
+	cursor:pointer;
+	padding-left:20px;
+	position:relative;
+
+}
+.nex-form-radio-item-icon,
+.nex-form-checkbox-item-icon {
+	width:20px;
+	text-align:center;
+	line-height:20px;
+	position:absolute;
+	left:0;
+	top:50%;
+	margin-top:-10px;
+	font-size:14px;
+	
+}
+.nex-form-radio-item-icon:before {
+	content: "\e61c";
+}
+.nex-form-checkbox-item-icon:before {
+	content: "\e60b";
+}
+
+.nex-form-radio-item-selected .nex-form-radio-item-icon:before {
+	content: "\e61d";
+}
+.nex-form-checkbox-item-selected .nex-form-checkbox-item-icon:before {
+	content: "\e60c";
+}
+
+.nex-form-radio-item-over .nex-form-radio-item-icon,
+.nex-form-checkbox-item-over .nex-form-checkbox-item-icon {
+	color:#3892d3;
+}

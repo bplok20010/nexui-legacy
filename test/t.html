@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<style type="text/css">
+.testb:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    border: 1px solid #3d91cf;
+}
+</style>
+
+<div style="width:100px; height:30px; position:relative; margin:5px;" class="testb"></div>
+
+<script type="text/javascript">
+
+var enumerablesTest = { toString: 1, a : 5 }
+for( var i in enumerablesTest ) { alert(i) } 
+alert(enumerablesTest.hasOwnProperty('toString'))
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script type="text/javascript">
+		var superMaxMin = true;
+		/*
+		检查是否完全支持
+		*/
+		jQuery(function() {
+			var body = document.body,
+				div = body.appendChild( div = document.createElement( "div" ) );
+				
+			$(div).css({
+				boxSizing : 'border-box',
+				MsBoxSizing : 'border-box',
+				height : 0,
+				width : 10,
+				padding : '0 5px',
+				minWidth : 15		
+			});
+			
+			superMaxMin = $(div).outerWidth() == 15;
+			
+			alert(superMaxMin)
+		
+			// set display to none to avoid a layout bug in IE
+			// http://dev.jquery.com/ticket/4014
+			body.removeChild( div ).style.display = "none";
+		});
+		</script>
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0; overflow:hidden;">
+    <style type="text/css">
+	.button{
+		width: 260px;
+	}
+	.button{
+		min-width: 260px;
+	}
+	.button{
+	  padding: 8px 20px;
+	  min-width: 300px;
+	}
+	</style>
+     
+    <div style="border:1px solid red;min-width:10px; width:5px; box-sizing : border-box;">-</div>
+    
+    <button class="button" onClick="alert(4);">看看这个宽度</button>
+    
+    <input style="
+    padding:10px;
+    border:10px solid green;
+    width:300px;
+    min-width:500px;
+    box-sizing : border-box;
+    ">
+    
+    </body>
+</html>

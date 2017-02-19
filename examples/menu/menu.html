@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../../themes/default/panel/Panel.css">
+        <link rel="stylesheet" href="../../themes/default/window/Window.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/Scroller.css">
+        <link rel="stylesheet" href="../../themes/default/menu/Menu.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../../lib/jquery/jquery-1.8.0.min.js"></script>
+    </head>
+    <body>
+    	<div id="boxsize" class="boxsize">
+        	boxsize
+        </div>
+    	<style type="text/css">
+		.boxsize {
+			box-sizing:border-box;
+			-moz-box-sizing:border-box; /* Firefox */
+			-webkit-box-sizing:border-box; /* Safari */
+			border:1px solid red;
+			padding:10px;
+			width:100px;
+			height:100px;
+		}
+		.nex-padding5 {
+			padding:5px;	
+		}
+		.border {
+			border:2px solid green;	
+		}
+		</style>
+        <div class="nex-button">test</div>
+        <input type="text" value="te" id="ss" />
+    	<div class="nex-button" style="width:500px; height:100px; padding:50px; border:1px solid red;">
+    	<table class="s" style="table-layout:fixed; height:200px" cellpadding="0" cellspacing="0" border="0">
+        	<tr>
+            	<td width="100">12</td>
+                <td width="12" style="overflow:hidden; padding:0px; margin:0px;"><div style="">adsfa</div></td>
+            </tr>
+        </table>
+        </div>
+        <div style="margin-left:10px; margin-top:10px; border:1px solid red; width:200px; height:30px; overflow:visible;" id="btns"></div>
+        <script type="text/javascript">
+		$(window).resize(function(){
+				//alert(9)	
+			});
+		var datas = [
+				{text:'新增...',disabled:true,callBack:function(){alert(4)}},
+				{text:'缩进...',tips:'-------',disabled:true,icon : '/ajax.uchome/Nex/css/tree/images/folder.gif',
+					items:[
+						{text:'cddddddffffffffffffffffffffffffddddddddddddddddddddddddddddddddddffddddd',icon : '/ajax.uchome/Nex/css/tree/images/folder.gif'},
+						{text:'d',callBack:function(){alert(4)}},
+						{text:'e'},
+						{text:'f'}
+					]
+				},
+				'-',
+				{text:'锁定到此列', cls : 'border', iconCls : 'fa fa-unlock', width:0,items:[
+						{text:'cdddddddddddooooooooooooooooooo',icon : '/ajax.uchome/Nex/css/tree/images/folder.gif'},
+						{text:'d',callBack:function(){alert(4)}},
+						'-',
+						{text:'e'},
+						{text:'f'}
+					]},
+				{text:'组合列',items:[
+						{text:'cddddddddddd',icon : '/ajax.uchome/Nex/css/tree/images/folder.gif'},
+						{text:'d',items:[
+						{text:'cddddddddddd',icon : '/ajax.uchome/Nex/css/tree/images/folder.gif'},
+						{text:'d'},
+						'-',
+						{text:'e'},
+						{text:'f'}
+					]},
+						{text:'e'},
+						{text:'f'}
+					]},
+				{text:'撤销锁定',hideOnClick:false},
+				'-',
+				{text:'显示过滤工具栏',isCmp : true,items : '-----HelloWord-----'},
+				{text:'升序排序',isCmp : true,
+					items : function(){
+						return {
+							xtype : 'grid',
+							columns : [ { field : 'ID' },{ field:'Name' } ],
+							data : [
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'},
+								{ID : 1,Name : 'test'}
+							],
+							height : 200,
+							width : '400'	
+						};	
+					}
+				},
+				{text:'显示过滤工具栏',callBack : function(){
+					console.log( $(this).html() )	
+				}},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'显示过滤工具栏'},
+				{text:'升序排序'},
+				{text:'降序排序'}
+			];
+		$(function(){
+			require(['Nex/menu/Menu'], function(Menu){
+			tree1 = new Menu({
+					items:datas,
+					cls:"nex-padding5",
+					delay:0,
+					width : 200,
+					maxHeight : 300,
+					hideToRemove : false,
+					border : true,
+					itemTips : true,
+					hideOnBlur : true,
+					//parent :　f2,
+					autoShow : true
+					//showAt : { at : f2.getInput(),zAlign : 'y',xAlign : 'left' }
+				});
+			});
+		});
+		</script>
+    </body>
+</html>

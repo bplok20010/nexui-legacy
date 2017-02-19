@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html style="height:100%; overflow:hidden;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/Scroller.css">
+        <link rel="stylesheet" href="../../themes/default/layout/LayoutRegion.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+    </head>
+    <body style="height:100%; overflow:hidden;">
+    	<script type="text/javascript">
+		
+		require(['Nex/layout/LayoutRegion'], function(region){
+			console.log(region);
+			var north = region.create({
+				renderTo : document.body,
+				position : 'north',
+				onSplitDragStop : function(){
+					return false;	
+				},
+				height : 50,
+				items : 'north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>north<br>'
+			});
+			var south = region.create({
+				renderTo : document.body,
+				position : 'south',
+				height : 50,
+				onSplitDrag : function(pos){
+					console.log(pos)
+					if( Math.abs(pos.top) > center.getHeight() ) return false;
+					//return false;	
+				},
+				items : {
+					xtype : 'container',
+					html : 'south....',
+					style : {
+						border : '1px solid red'	
+					},
+					width : function(){
+						return $(window).width() * .5	
+					}	
+				}
+			});
+			var east = region.create({
+				renderTo : document.body,
+				position : 'east',
+				width : '30%',
+				items : {
+					xtype : 'container',
+					html : 'east....',
+					style : {
+						border : '1px solid red'	
+					},
+					width : function(el){
+						return el.width() * .8
+					}	
+				}
+			});
+			
+			var west = region.create({
+				renderTo : document.body,
+				position : 'west',
+				width : '30%',
+				items : 'west'
+			});
+		
+			var center = region.create({
+				renderTo : document.body,
+				position : 'center',
+				items : 'center'
+			});
+			
+			var RegionMap = {
+				north : north,
+				west : west,
+				east : east,
+				south : south,
+				center : center	
+			};
+			
+			//setInterval(function(){
+				Nex.each( RegionMap, function(region){
+					region.setRegionPos( RegionMap )
+				} );	
+			//}, 1000);
+			
+			
+			
+		});
+		
+		</script>
+    </body>
+</html>

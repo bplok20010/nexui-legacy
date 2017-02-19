@@ -1,0 +1,29 @@
+{
+  "name": "nexui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "boot.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
+  },
+  "dependencies": {
+    "gulp-sass": "^2.3.2",
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-uglify": "^1.5.1",
+    "gulp-less": "^3.0.5",
+    "gulp-watch": "^4.3.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "jshint": "^2.9.1",
+    "gulp-jshint": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

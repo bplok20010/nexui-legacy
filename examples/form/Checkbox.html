@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%; overflow:hidden;"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="//at.alicdn.com/t/font_rt3jz89xz429be29.css">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/Scroller.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0; overflow:hidden;">
+    <style type="text/css">
+	</style>
+    
+     <script type="text/javascript">
+	 $(function(){
+		 require([
+		 	'Nex/form/Checkbox',
+			'Nex/form/Radio',
+			'Nex/form/Text'
+		], function(Checkbox, Radio, Text){ 
+			
+			var items = [];
+			
+			for( var i=0;i<5;i++ ) {
+				items.push({
+					text : 'aaaaaa'+i,
+					value : 'a'+i	
+				});
+			//	if( i == 3 ) items.push('-');
+			}
+			
+			Text.create({
+				renderTo: document.body	,
+				labelText : 'Checkbox:',
+				value : '禁用',
+				disabled : true,
+				width : 200	
+			});
+			
+			checkbox = Checkbox.create({
+				labelText : 'Checkbox:',
+				//disabled : true,
+				value : 'a,b,c,d',
+				itemDefaults: {
+					width : '33%'	
+				},
+				
+				items: [
+					{ text : '情况一', value : 'a' },
+					{ text : '情况一', value : 'b' },
+					{ text : '情况一', value : 'c' },
+					{ text : '情况一', value : 'd' },
+					{ text : '情况一....', value : 'e' },
+					{ text : '情况一', value : 'f' }
+				],
+				width : 200,
+				renderTo: document.body	 	
+			});
+			radio2 = Radio.create({
+				labelText : 'Radio:',
+				display : 'block',
+				group : 'radio',
+				name : 'xl',
+				items: items,
+				//readOnly : true,
+				width : 200,
+				onChange : function(v, o){ console.log(v, o) },
+				//height : '50%',
+				renderTo: document.body	 	
+			});
+			radio = Radio.create({
+				labelText : 'Radio:',
+				display : 'block',
+				group : 'radio',
+				name : 'xl',
+				items: items,
+				//readOnly : true,
+				width : 200,
+				height : 100,
+				renderTo: document.body	 	
+			});
+			/*checkbox2 = Checkbox.create({
+				labelText : 'Checkbox:',
+				items: items,
+				height : '30%',
+				width : '70%',
+				renderTo: document.body	 	
+			});*/
+		 });	 
+	 });
+	 </script>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>继承测试</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script src="../../boot.js"></script>
+		
+    </head>
+    <body>
+    <script type="text/javascript">
+	
+	function　ns( str ){
+			var undef,
+				t = win,
+				s = str+'';	
+			s = s.split('.');
+			for( var i=0,len=s.length-1;i<len;i++ ) {
+				var e = s[i];
+				if( !(e in t) || !t[e] ) {
+					t[e] = {};	
+				}
+				t = t[e];	
+			}	
+			return t[s[i]] = t[s[i]] === undef ? {} : t[s[i]];
+		}
+	
+	$(function(){
+		require(['Nex/core/Class'], function(Class){
+			//Class(null) //定义类佚名类
+			//Class('myClass') //定义类myClass
+			//Class(myClass)   //定义一个佚名类并继承类myClass
+			//Class([myClass,myClass2, 'myClass3'])   //定义一个佚名类并继承类myClass 同时组合 myClass2 myClass3
+			//Class({ method: noop }) //定义一个佚名类并扩展	
+			A = Class('A');
+			console.log('A', A.$className, A.superclass.$className);
+			A1 = Class(null);
+			console.log('A1', A1.$className, A1.superclass.$className);
+			B = Class(A);
+			console.log('B', B.$className, B.superclass.$className);
+			C = Class({
+				a : 1,
+				x : 5,
+				say : function(){}
+			});
+			console.log('C', C.$className, C.superclass.$className);
+			E = Class({
+				a : 2,
+				say : function(){ alert(3) },
+				b : 2	
+			});
+			console.log('E', E.$className, E.superclass.$className);
+			D = Class([E,C, { t : 7, a : 3 }]);
+			//D xxx C
+			console.log('D', D.$className, D.superclass.$className);
+			
+			//Class('B', 'A') //定义类B并继承类A
+			//Class('B', { method : noop }) //定义类B并扩展
+			//Class([A,A1], { method : noop }) //定义佚名类并继承类A同时组合A1并扩展
+			//Class(null, { method : noop }) //定义佚名类 并扩展
+			//Class(null, A) //定义佚名类 并继承A
+			//Class( A, null) //定义佚名类 并继承A
+			//Class( 'K', null) //定义佚名类 并继承A
+			F = Class('F', D);
+			console.log('F', F.$className, F.superclass.$className);
+			G = Class('G', {
+				a : 1,
+				b : 1,
+				say : function(){},
+				superclass : 6	
+			});
+			console.log('G', G.$className, G.superclass.$className);
+			
+			H = Class(G, {
+				a : 2,
+				b : 1,
+				t : 3,
+				say : function(){ alert(1) },
+				superclass : 6	
+			});
+			console.log('H', H.$className, H.superclass.$className, H.fn);
+			
+			I = Class([G,H,C], {
+				y : 5	
+			});
+			
+			console.log('I', I.$className, I.superclass.$className, I.fn);
+			
+			J = Class(null, {
+				y : 5	
+			});
+			
+			console.log('J', J.$className, J.superclass.$className, J.fn);
+			
+			K = Class(null, I);
+			
+			console.log('K', K.$className, K.superclass.$className, K.fn);
+			
+			K1 = Class('K1', null);
+			
+			console.log('K1', K1.$className, K1.superclass.$className, K1.fn);
+			
+			K2 = Class(K1, null);
+			
+			console.log('K2', K2.$className, K2.superclass.$className, K2.fn);
+			
+			//推荐写法
+			
+			L = Class('L', K , { tt : 7 });
+			
+			console.log('L', L.$className, L.superclass.$className, L.fn);
+			
+			M = Class(null, L , { tt1 : 7 });
+			
+			console.log('M', M.$className, M.superclass.$className, M.fn);
+			
+			N = Class(null, null , { tt1 : 7 });
+			
+			console.log('N', N.$className, N.superclass.$className, N.fn);
+			
+			U = Class( 'U', null , { tt1 : 7 });
+			
+			console.log('U', U.$className, U.superclass.$className, U.fn);
+			
+			U1 = Class( 'U1', null , { tt1 : 7, extend : U });
+			
+			console.log('U1', U1.$className, U1.superclass.$className, U1.fn);
+		});
+	});
+	
+	</script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>继承测试</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script src="../../boot.js"></script>
+		
+    </head>
+    <body>
+    
+    <style type='text/css'>
+			.demo {
+				width : 100px;
+				height : 100px;
+				padding : 10px;
+				border : 5px solid red;
+				box-sizing : border-box;
+				min-width:60px;
+				top:100px;
+				left:100px;
+			}
+			.table {
+				display:table;
+				width:100%; 
+				height:100%;
+				table-layout:fixed;
+			}
+			.row {
+				display: table-row;	
+			}
+			.cell {
+				display: table-cell;	
+			}
+			.h20 {
+				height:20px;	
+			}
+		</style>
+		<div id="demo" class="demo n-css-shadow " ></div>
+        <div style="width:500px; height:300px; border:1px solid #b4b4b4;opacity: 0.8;">
+        <div class="table">
+        	<div class="row h20">
+            	<div class="cell" rowspan=4>1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+            </div>
+            <div class="row">af</div>
+            <div class="row h20">xxx1</div>
+        </div>
+        </div>
+    <script type="text/javascript">
+	
+	(function($){
+		$.each(['maxWidth', 'maxHeight', 'minWidth', 'minHeight'], function(i, fn){
+			var ua = navigator.userAgent.toLowerCase();
+			var ie8 = /msie 8/.test(ua);
+			var ac1 = {
+				maxWidth : 'outerWidth',
+				minWidth : 'outerWidth',
+				maxHeight : 'outerHeight',
+				minHeight : 'outerHeight'
+			};
+			var ac2 = {
+				maxWidth : 'width',
+				minWidth : 'width',
+				maxHeight : 'height',
+				minHeight : 'height'
+			};
+			function isPerc(v){
+				return (v+'').indexOf('%') === -1 ? false : true;	
+			}
+			$.fn[fn] = function( v ){
+				return ( isPerc(v) || !ie8 ) ?
+					this.css(fn, v) :
+					this.each(function(x, el){
+						var that = $(el);
+						var pix = parseFloat(v, 10) - (that[ac1[fn]]() - that[ac2[fn]]());
+						that.css(fn, pix);
+					});
+			};	
+		});	
+	})(jQuery);
+	
+	$(function(){
+		require(['Nex/AbstractComponent'], function(cmp){	
+			var d = cmp.create({
+				autoResize : true	
+			});
+		});
+	});
+	
+	
+	
+	</script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script src="../examples/asset/js/jquery.min.js"></script>
+
+<div  id="test" style=" position:relative; margin:5px;" class="testb">
+
+<a class="a">111</a>
+<a class="b">222</a>
+<a class="c">333</a>
+
+</div>
+
+<script type="text/javascript">
+
+$(function(){
+	$('#test').on({
+			'click' : function(){
+				console.log('12');	
+			},
+			'mouseover' : function(){
+				console.log('23');		
+			}
+		}, '.a');
+});
+
+</script>
+
+</body>
+</html>

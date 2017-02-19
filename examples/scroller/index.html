@@ -1,0 +1,179 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Scroller</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+		
+        <style type="text/css">
+			.scoller-wrap {
+				width:300px;
+				height:300px;
+				position:relative;
+				margin:0px auto;
+				margin-top:100px;	
+			}
+			.scroller-container {
+				overflow:hidden;
+				height:100%;
+				width:100%;
+				background:#EBEBEB;
+				/*padding:10px;
+				border:5px solid #C6F4CA;*/
+			}
+		</style>
+    </head>
+    <body>
+    
+    	<div class="scoller-wrap">
+        	<div id="scrollerCt" class="scroller-container">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+              <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+               <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                <p>Vivamus vehicula. Integer cursus massa et nisl. Morbi pretium sem eget risus. Vestibulum nec est. Donec feugiat purus et ligula. Quisque semper. Sed eu ante. Curabitur suscipit porttitor libero. Nam eros leo, sollicitudin eget, tincidunt vitae, facilisis a, dui. Proin neque. Aliquam erat volutpat. Pellentesque felis.</p>
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+            </div>
+            <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+            <div class="slimScrollBar" id="scrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 65.9824px; background: rgb(0, 0, 0);"></div>
+        </div>
+    	<script type="text/javascript">
+		
+		function calcScrollBarHeight(el, minHeight){
+			var height = el.clientHeight;
+			var scrollHeight = el.scrollHeight;
+			
+			var barHeight = height/scrollHeight * height;
+			
+			barHeight = Math.max(barHeight, minHeight)
+			
+			scrollBar.style.height = barHeight+'px';
+			
+			return barHeight;
+		}
+		
+		function calcScrollBarStep(el, barHeight){
+			var height = el.clientHeight - barHeight;
+			var sh = el.scrollHeight - el.clientHeight;
+			
+			return height/sh;
+		}
+		
+		var barHeight = calcScrollBarHeight(scrollerCt, 6);
+		var step = calcScrollBarStep(scrollerCt, barHeight);
+		
+		function Scroller(el){
+			
+			this.step = 5;
+			
+			this.height = el.clientHeight;
+			
+			this.scrollHeight = el.scrollHeight;
+			
+			console.log( this.height, this.scrollHeight );
+			
+			el.addEventListener('mousewheel', function(e){
+				console.log('adsf')
+				var scrollStep = 150;
+				
+				el.scrollTop = e.wheelDelta > 0 ? el.scrollTop - scrollStep : el.scrollTop + scrollStep;
+				
+				scrollBar.style.top = el.scrollTop * step + 'px';
+				
+				return false;
+		
+			}, false);
+			
+			var isDraging = false;
+			var cy = 0;
+			var start = 0;
+			var eid;
+			var fn;
+			
+			//removeEventListener
+			
+			scrollBar.addEventListener('mousedown', function (e){
+				isDraging = true;
+				cy = e.pageY;
+				start = parseInt(scrollBar.style.top);
+			}, false);
+			
+			document.addEventListener('mousemove', fn = function(e){
+				if( !isDraging ) return;
+				var top = e.pageY - cy;
+				
+				var sh = start + Math.min(top, el.clientHeight - barHeight);
+				
+				sh = sh < 0 ? 0 : sh;
+				
+				scrollBar.style.top = sh + 'px';
+				
+				el.scrollTop = sh/step;
+				//console.log( sh/step )	
+			});
+			
+			document.addEventListener('mouseup', function(e){
+				isDraging = false;
+				cy = 0;
+				start = 0
+			}, false);
+				
+		}
+		
+		new Scroller( document.getElementById('scrollerCt') )
+		
+		</script>
+    </body>
+</html>

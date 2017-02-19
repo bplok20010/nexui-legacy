@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%; overflow:hidden;"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0; overflow:hidden;">
+    
+    <button onClick="vaild()">验证</button>
+    <style type="text/css">
+	.db {
+		border:none;
+		background-color:transparent;
+		color: #000;	
+	}
+	input.disabled{
+border:0px solid #DDD;
+background-color:#F5F5F5;
+color:red;
+min-height:14px;
+}
+	</style>
+    
+     <script type="text/javascript">
+	 
+	 function vaild(){
+		console.log( text.validateValue() )	 
+	}
+	 
+	 $(function(){
+		 require([
+		 	'Nex/form/Text'
+		], function(Text){ 
+			
+			
+			text = Text.create({
+				//labelText : 'ListBox:',
+				//width : 250,
+				//height: 100,
+				//minWidth : 150,
+				//width : '30%',
+				//tabIndex: -1,
+				placeholder : '请输入...',
+				rules : ['required', /^\d+$/],
+				width : 200,
+				':onChange' : function(v){
+					console.log(v, $.type(v))	;
+				},
+				':onFocus' : function(v){
+					console.log('onFocusList')	
+				},
+				':onBlur' : function(v){
+					console.log('onBlurList')	
+				},
+				renderTo: document.body	 	
+			});
+			
+		 });	 
+	 });
+	 </script>
+    </body>
+</html>

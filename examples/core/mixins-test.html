@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>继承测试</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script src="../../boot.js"></script>
+		
+    </head>
+    <body>
+    <script type="text/javascript">
+	
+	function　ns( str ){}
+	
+	$(function(){
+		require(['Nex/core/Class'], function(Class){
+			M1 = Class(null, {
+				h : function(){
+					this._super();
+					console.log('M1');	
+				}	
+			});
+			
+			M2 = Class(null, M1, {
+				h : function(){
+					this._super();
+					console.log('M2');	
+				}	
+			});
+			
+			M3 = Class(null, M2, {
+				h : function(){
+					this._super();
+					console.log('M3');	
+					return this;
+				}	
+			});
+			
+			var x = {
+				config : function(){
+					return	{
+						a : 'a',
+						b : 'b',
+						c : 3	
+					}
+				},
+				
+				tt : function(){
+					console.log(this.c)	
+					return this;
+				},
+				
+				su : function(){
+					console.log('su1');	
+				}	
+			}
+			
+			var A = Class('A', null, {
+				
+				mixins : x,
+				
+				config : function(){
+					return {
+						a :　1,
+						b : 2	
+					}	
+				},
+				
+				constructor : function(){
+					this.initConfig();	
+				},
+				
+				say : function(){
+					console.log( this.a );	
+					return this;
+				}
+					
+			});
+			
+			A.create().say().tt();// 1 3
+			
+			var c = {
+				config : function(){
+					return	{
+						a : 'a1',
+						b : 'b2',
+						c : 4	
+					}
+				},
+				
+				tt : function(){
+					console.log(this.c)
+					return this;	
+				}	
+			}
+			
+			var B = Class('B', [A, c, M3], {
+				su : function(){
+					this._super()
+					console.log('su2')	
+				}
+					
+			});
+			console.log('------------B--------------')
+			B.create().say().tt().h().su();//1 3 M1 M2 M3 su1 su2
+			
+		});
+	});
+	
+	</script>
+    </body>
+</html>

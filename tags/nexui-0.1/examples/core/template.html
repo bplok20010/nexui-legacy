@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>模板测试</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script src="../../boot.js"></script>
+		
+    </head>
+    <body>
+    
+    <pre>
+    var str = "Hello <%=name%>!\
+	这是一个<% print('测试') %>";
+	var fn = template(str);
+	console.log(fn( { name : 'Nex' } ));
+    
+    var str = "Hello {{name}}!\
+    这是一个<% print('测试') %>";
+    var fn = template(str, {
+        interpolate: /{{([\s\S]+?)}}/g,	
+    });
+    console.log(fn( { name : 'Nex' } ));				
+    </pre>
+    
+    
+    <script type="text/javascript">
+	
+	$(function(){
+		require(['Nex/utils/Template'], function(template){
+			var str = "Hello <%=name%>!\
+			这是一个<% print('测试') %>";
+			var fn = template(str);
+			console.log(fn( { name : 'Nex' } ));
+			
+			var str = "Hello {{name}}!\
+			这是一个<% print('测试') %>";
+			var fn = template(str, {
+				interpolate: /{{([\s\S]+?)}}/g,	
+			});
+			console.log(fn( { name : 'Nex' } ));				
+		});
+	});
+	
+	</script>
+    
+    </body>
+</html>

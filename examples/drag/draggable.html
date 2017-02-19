@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%;"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+        
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0;">
+    <style>
+  .ui-widget-content { width: 150px; height: 150px; padding: 0.5em; border: 1px solid; margin:20px;}
+  </style>
+  
+  	<div style="width:600px; height:800px; overflow:auto; margin:50px 10px; position:relative;"> 
+    	<div style="width:400px; height:400px; overflow: visible; position:relative;"> 
+        	<div id="123" class="ui-widget-content" style="">
+              <p>Drag me around</p>
+            </div>
+    	</div>
+    </div>
+   	
+    
+    <div id="draggable2" class="ui-widget-content">
+    	<p>Drag me around</p>
+    </div>
+     <div id="draggable3" class="ui-widget-content" style="">
+    	<p style="background:#ccc">Drag me <a href="#Accv">around</a></p>
+    </div>
+    <div id="draggable" class="ui-widget-content" style="">
+    	<p style="background:#ccc">Drag me <a href="#Accv">around dd</a></p>
+    </div>
+    <div id="draggable4" class="ui-widget-content" style=" position:absolute; left:0; top:0;">
+    	<p style="background:#ccc">Drag me <a href="#Accv">around abs</a></p>
+    </div>
+     <script type="text/javascript">
+	 $(document).click(function(){
+				console.log('click body'); 
+			})
+	 $(document).mouseup(function(e){
+				console.log(e); 
+			})		
+	 $(function(){
+		 require(['Nex/jqueryui/draggable', 'Nex/drag/Drag'], function(d, Drag){ //Nex/util/position
+			$( "#draggable" ).draggable({
+				distance: 1,
+				handle : 'p',
+				//cursorAt : [20, 20],
+				//revert : true,
+				helper : 'clone',
+				delay: 0
+			});
+			
+			$(draggable).click(function(){
+				console.log('click draggable'); 
+			});
+			
+			drag = Drag.create({
+				el : draggable2,
+				//revert : true,
+				opacity : .4,
+				//zIndex : 1000,
+				cursorAt : [20, 20],
+				helper : 'clone',
+				cursor : 'pointer',
+				grid : [50,50],
+				containment: [300,300, 500, 500]
+				//axis : 'y'	
+			});
+			
+		 });	 
+	 });
+	 </script>
+     
+    </body>
+</html>

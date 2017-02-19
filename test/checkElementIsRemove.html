@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pushStat</title>
+<script src="../lib/jquery/jquery.js"></script>
+</head>
+
+<body>
+
+<script>
+	
+	var html = [];
+	html.push('<div style="display: none">');
+	for( var i = 0; i< 1; i++ ) {
+		html.push('<div><span>'+i+'</span><span>a</span><span>a</span><span>a</span><span>a</span></div>');
+	}
+	html.push('</div>');
+	
+	console.time('s');
+	document.body.innerHTML = html.join('');	
+	console.timeEnd('s');
+	
+	var arr = [];
+	
+	function s(){
+		
+		
+		for( var i = 0; i< 1000; i++ ) {
+			arr.push(document.createElement('div'));
+		}
+		
+		arr.splice(0, 1000);
+		
+	}
+	
+	setInterval("s()", 10);
+	
+	
+</script>
+
+</body>
+</html>

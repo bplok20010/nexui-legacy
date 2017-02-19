@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html style=""><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/scroller.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+        <script type="text/javascript">
+		 $(function(){
+			require([
+				'Nex/router/Router'
+			], function(router){ 
+				path = router.create({
+						html5Mode : true,
+						routes : {
+							'/' : function(d){
+								console.log('root', d);		
+							}
+						}
+					});
+					//console.log(router);
+				path.when('/a2/:a/:b', function(){
+					console.log('---')	
+				})
+				.when('/others/:id?', function(d){
+					console.log('redirect', d);	
+				})
+				.when('/userinfo/:id',function(p){
+					console.log(p)	
+				})
+				.when(/^\/login(?:\/(\d+))?/, function(d){
+					console.log(d)	
+				})
+				.otherwise('/others/34');
+			 });	
+			
+		 });
+		 </script>
+         
+    </head>
+    <body style="">
+<h1>hash links</h1>
+<a href="#/a1/b/c#a=3">test1</a>
+<a href="#/a2/b/c">test2</a>
+<a href="#/a3/b/c">test3</a>
+<a href="#/a4/b/c">test4</a>
+<h1>html5 pushState links</h1>
+<a href="/userinfo/4">test1</a>
+<a href="/center/4">test2</a>
+<a href="/main/4">test3</a>
+<a href="/login/4">test4</a>     
+    </body>
+</html>

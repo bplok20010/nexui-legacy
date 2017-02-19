@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Calendar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="asset/css/style.css">
+		
+    </head>
+    <body>
+    
+    <script>
+	
+	function escapeRegex(str){
+		return str.replace(/([-.*+?^${}()|[\]\/\\])/g, "\\$1");	
+	}
+	
+	var parseCodes = {
+			Y : '(\\d{1})',
+			T : '(\\d{1})',
+			m : '(\\d{1})',
+			d : '(\\d{1})',
+			H : '(\\d{1})',
+			i : '(\\d{1})',
+			s : '(\\d{1})'	
+		}
+	
+	var parseCodesReg = new RegExp('\\\\?[YyMmDdHhisAaucT]', 'g'); ///\\?[YyMmDdHhisAaucT]/g;
+	
+	var str = "Y\\TH";
+	
+	var format = escapeRegex(str);
+	console.log(format)
+	format = format.replace( parseCodesReg, function(str, idx){
+		if( str.charAt(0) == "\\" ) return str.slice(1);
+		return parseCodes[str];
+	} );
+	
+	console.log(format)
+		
+		
+		
+		var special = false,
+			ch = "",
+			i = 0,
+			regex = [],
+			len = format.length,
+			atEnd = [],
+			obj;
+
+            for (; i < len; ++i) {
+                ch = format.charAt(i);
+                if (!special && ch == "\\") {
+                    special = true;
+                } else if (special) {
+                    special = false;
+                    regex.push(ch);
+                } else {
+					//if( parseCodes )
+                    regex.push(obj.s);
+                    if (obj.g && obj.c) {
+                        if (obj.calcAtEnd) {
+                            atEnd.push(obj.c);
+                        } else {
+                            calc.push(obj.c);
+                        }
+                    }
+                }
+            }
+		
+	</script>
+    
+    </body>
+</html>

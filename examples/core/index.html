@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>继承测试</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script src="../../boot.js"></script>
+		
+    </head>
+    <body>
+    <script type="text/javascript">
+	
+	$(function(){
+		require(['Nex','Nex/utils/Utils'], function(){	
+		
+			//测试1
+			Nex.Class('A', {
+				configs : function(){
+					return {
+						a : 1,
+						b : 1,
+						c : 1,
+						d : 1	
+					}	
+				},
+				hello : function(){
+					this._super(arguments);
+					console.log('hello A');
+					return this;	
+				}	
+			});
+			console.log(Nex.create('A').hello().configs.a);
+			Nex.Class('B', 'A', {
+				configs : function(){
+					return {
+						a : 2,
+						b : 2,
+						c : 3,
+						//d : 4	
+					}	
+				},
+				hello : function(){
+					this._super(arguments);
+					console.log('hello B');
+					return this;	
+				}	
+			});
+			console.log(Nex.create('B').hello().configs.a);
+			Nex.Class('C', 'B', {
+				configs : function(){
+					return {
+						a : 3,
+						b : 1,
+						c : 6,
+						//d : 1	
+					}	
+				},
+				hello : function(){
+					this._super(arguments);
+					console.log('hello C');
+					return this;	
+				}	
+			});
+			console.log(Nex.create('C').hello().configs.a);
+			
+			console.log(Nex.create('C', {
+				mixins : {
+					configs : {
+						a : 'x'	
+					},
+					hello : function(){
+						this._super(arguments);
+						console.log('hello C mixins');
+						return this;	
+					}		
+				},
+				a : 'xx'
+			}).hello().configs.a); //hello C mixins
+			
+			//定义一个佚名类
+			var s = Nex.Class(null, 'C');
+			s.create().hello();		// hello C
+			console.log(s.xtype);
+		});
+	});
+	
+	</script>
+    </body>
+</html>

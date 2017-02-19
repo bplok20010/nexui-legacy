@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>router-parse</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+		
+    </head>
+    <body>
+    
+    <script type="text/javascript">
+	//功能比较简单
+	//只支持:name的检测
+	//支持使用*anythings的模糊检测
+	function parse1(path){
+		var router = {
+			idMatch: /:(\w[\w\d]*)/g,
+			idReplacement: "([^\\/]+)",
+			// expamples:
+			// /index/:username/*anythings/:id 
+			// /index/nobo/aksdjfjkajd/adf/uiu/adfkfjakd/9 
+			globMatch: /\*(\w[\w\d]*)/,
+			globReplacement: "(.+)",
+			routeToRegExp: function(route){
+				// Sub in based on IDs and globs
+				route = route.replace(this.idMatch, this.idReplacement);
+				route = route.replace(this.globMatch, this.globReplacement);
+				// Make sure it's an exact match
+				route = "^" + route + "$";
+	
+				return new RegExp(route);
+			}	
+		};	
+		
+		return router.routeToRegExp(path);
+	}
+	
+	console.log( parse1('/index/:username/*anythings/:id') );
+	
+	//比上一个检测方法更多，支持? 而且*的检测也完美
+	//examples:
+	// 1. /index/:username/:id? ==> /index/nobo or /index/nobo/3
+	// 2. /index/:username/:info*/others ==> /index/nobo/anythings.../others
+	function parse2(path){
+		//区分大小写
+		var insensitive = false,
+		ret = {
+			  originalPath: path,
+			  regexp: path
+			},
+			keys = ret.keys = [];
+		
+		path = path
+		  .replace(/([().])/g, '\\$1')
+		  .replace(/(\/)?:(\w+)([\?|\*])?/g, function(_, slash, key, option){
+			var optional = option === '?' ? option : null;
+			var star = option === '*' ? option : null;
+			keys.push({ name: key, optional: !!optional });
+			slash = slash || '';
+			return ''
+			  + (optional ? '' : slash)
+			  + '(?:'
+			  + (optional ? slash : '')
+			  + (star && '(.+?)' || '([^/]+)')
+			  + (optional || '')
+			  + ')'
+			  + (optional || '');
+		  })
+		  .replace(/([\/$\*])/g, '\\$1');
+		
+		ret.regexp = new RegExp('^' + path + '$', insensitive ? 'i' : '');
+		
+		return ret;
+	}
+	var ret;
+	console.log( ret = parse2('/index/:username/:anythings*/others/:id?') );
+	
+	var r = ret.regexp.exec('/index/nobo/profile/home/others/56');
+	
+	if( r ) console.log(r);
+	
+	</script>
+    
+    </body>
+</html>

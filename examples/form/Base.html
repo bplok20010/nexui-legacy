@@ -1,0 +1,260 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%; overflow:hidden;"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/scrollbar.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0; overflow:hidden;">
+    <style type="text/css">
+	.db {
+		border:none;
+		background-color:transparent;
+		color: #000;	
+	}
+	input.disabled{
+border:0px solid #DDD;
+background-color:#F5F5F5;
+color:red;
+min-height:14px;
+}
+	</style>
+    <input ><textarea></textarea>
+    <select multiple>
+    	<option>1</option>
+        <option>1</option>
+        <option>1</option>
+        <option>1</option>
+        <option>1</option>
+        <option>1</option>
+        <option>1</option>
+    </select>
+    <div style="border:1px solid red; min-height:22px; padding:5px; " class="nex-border-box"></div>
+    <div id="ipt" contenteditable  style="width:100px; height:100px;"></div>
+    <input class="disabled" id="ss" type="text" value="nobo--" >
+    <input type="radio" onChange="console.log('cc')">
+    <input type="checkbox" onChange="console.log('aa')">
+    <div>
+     <input class="nex-form-field nex-border-box" type="text" id="ff" style="background:green;" value="" >
+     </div>
+    <table>
+    	<tr>
+        	<td>12113</td>
+            <td>123</td>
+        </tr>
+    </table>	
+     <script type="text/javascript">
+	 $(function(){
+		/* ipt.attachEvent('onpropertychange', function(){
+				console.log(event.propertyName, event.type)	  
+			});*/
+			
+		 ipt.onInputText= function(){
+				console.log('adsf')	  
+			};
+		require.config({
+			urlArgs : 't='+(+new Date())	
+		});		
+		 require(['Nex/form/Base', 
+		 			'Nex/form/Hidden', 
+		 			'Nex/form/Display', 
+					'Nex/form/Text', 
+					'Nex/form/Password',
+					'Nex/form/TextArea',
+					'Nex/form/ListBox'
+		], function(Base, Hidden, Display, Text, PWD, TextArea, ListBox){ 
+			field = Base.create({
+				//width : 200,
+				labelPosition : 'left',
+				labelText : '请选举：',
+				//virtualScroll : true,
+				height : 50,
+				value : '<div style="height:150px;border:1px solid red;">fadfasd</div>',
+				labelWidth : '',
+				display : 'box',
+				width : 200,
+				autoScroll : true,
+				//tabIndex : 0,
+				rules : 'required',
+				bodyStyle : {
+					//minWidth : 100	
+				},
+				onClick : function(){
+					console.log('--');	
+				},
+				':onChange' : function(v){
+					console.log(v, 8)	
+				},
+				//disabled : true,
+				':onFocus' : function(v){
+					console.log('focus1')	
+				},
+				':onBlur' : function(v){
+					console.log('onBlur1')	
+				},
+				renderTo : document.body	
+			});
+			
+			hidden = Hidden.create({
+				value : 'adf',
+				renderTo : document.body	
+			});
+			
+			field1 = Display.create({
+				//width : 200,
+				//labelPosition : 'top',
+				labelText : 'adf',
+				//value : 'nobo',
+				labelWidth : '',
+				//tabIndex : 0,
+				bodyStyle : {
+					minWidth : 100	
+				},
+				height : 50,
+				value : '<div style="height:150px;"></div>',
+				rules : 'required',
+				onClick : function(){
+					console.log('--');	
+				},
+				':onChange' : function(v){
+					console.log(v)	
+				},
+				//disabled : true,
+				':onFocus' : function(v){
+					console.log('focus2')	
+				},
+				':onBlur' : function(v){
+					console.log('onBlur2')	
+				},
+				renderTo : document.body	
+			});
+			console.time('t')
+			text = Text.create({
+				//width : 200,
+				//labelPosition : 'top',
+				//labelText : 'adf',
+				labelText : '请选举：',
+				value : 'nobo',
+				placeholder : '.nera..',
+				labelWidth : '',
+				tabIndex : 10,
+				bodyStyle : {
+					minWidth : 100	
+				},
+				rules : 'required',
+				onClick : function(){
+					console.log('--');	
+				},
+				':onChange' : function(v){
+					console.log(v, 'change');
+				},
+				'onKeyDown': function(e){
+					//console.log(e.keyCode)	
+				},
+				//autoFocus :  true,
+				//disabled : true,
+				':onFocus' : function(v){
+					console.log('focus2')	
+				},
+				':onBlur' : function(v){
+					console.log('onBlur2')	
+				},
+				renderTo : document.body	
+			});
+			console.timeEnd('t')
+			console.time('p')
+			password = PWD.create({
+				//width : 200,
+				//labelPosition : 'top',
+				labelText : 'adf',
+				value : 'nobo',
+				placeholder : '.nera..',
+				labelWidth : '',
+				tabIndex : 10,
+				readOnly : true,
+				bodyStyle : {
+					minWidth : 100	
+				},
+				rules : 'required',
+				onClick : function(){
+					console.log('--');	
+				},
+				':onChange' : function(v){
+					console.log(v)	;
+				},
+				onKeyDown: function(e){
+					//console.log(e.keyCode)	
+				},
+				//disabled : true,
+				':onFocus' : function(v){
+					console.log('focus2')	
+				},
+				':onBlur' : function(v){
+					console.log('onBlur2')	
+				},
+				renderTo : document.body	
+			});
+			console.timeEnd('p')
+			console.time('ta')
+			textarae = TextArea.create({
+				labelText : 'Textarea:',
+				height : '25%',
+				width : '25%',
+				//labelWidth : '20%',
+				//disabled : true,
+				tabIndex : 10,
+				placeholder : '.nera..',
+				renderTo: document.body	 	
+			});
+			console.timeEnd('ta')
+			console.time('l')
+			listbox = ListBox.create({
+				//labelText : 'ListBox:',
+				//width : 250,
+				//height: 100,
+				//minWidth : 150,
+				//width : '30%',
+				tabIndex: 20,
+				multiSelect : true,
+				width : 200,
+				height : 120,
+				virtualScroll : true,
+				itemFormatter: function(text, data){
+					//console.log(arguments);
+					return text + '';	
+				},
+				':onChange' : function(v){
+					console.log(v)	;
+				},
+				':onFocus' : function(v){
+					console.log('onFocusList')	
+				},
+				':onBlur' : function(v){
+					console.log('onBlurList')	
+				},
+				value : 'a7',
+				items: [
+					{ text : '...1df', value: 'a1' },
+					{ text : 'adfa2', value: 'a2' },
+					{ text : 'fdddddddddddd', value: 'a3', disabled: true },
+					{ text : '4xxx', value: 'a4' },
+					{ text : 'ttt5', value: 'a5' },
+					{ text : 'hhhh6', value: 'a6' },
+					',',
+					{ text : 'jjjjjj7', value: 'a7' }
+				],
+				renderTo: document.body	 	
+			});
+			console.timeEnd('l')
+		 });	 
+	 });
+	 </script>
+    </body>
+</html>

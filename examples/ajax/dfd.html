@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <script src="../../boot.js"></script>
+        <script src="../../lib/jquery/jquery-1.8.3.js"></script>
+    </head>
+    <body style="padding:10px;">
+    	<script type="text/javascript">
+		function Request(x){
+			return $.ajax({
+				url: 'text.php?C='+x	
+			});	
+		}
+		
+		require(['Nex/Ajax'], function(ajax){
+			req = Nex.create('ajax',{
+				///dataType : 'json',
+				//timeout: 5000,
+				url: 'text.php?C=3',
+				resolveProcess1: function(data, s, f){
+					f('pppp')
+					console.log( data );	
+				},
+				url3: function(data,s, f){
+					
+					dfd = $.Deferred();
+					console.log(arguments);	
+					setTimeout(function(){
+						//f('cuowu', 'parseerror')	
+						//dfd.resolve('45464', '888')
+					},2000)
+					
+					return dfd;
+				},
+				'onSuccess': function(){
+					console.log(arguments);	
+				},
+				'onComplete': function(){
+					console.log(arguments, '--');	
+				}	
+			}).fail(function(){
+				console.log(arguments)	
+			}).always(function(){
+				console.log(arguments, '/*/')	
+			});
+		})	
+		</script>
+    </body>
+</html>

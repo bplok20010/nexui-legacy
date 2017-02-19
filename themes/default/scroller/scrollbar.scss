@@ -1,0 +1,103 @@
+.nex-scrollbar {
+	position:relative;
+} 
+.nex-scrollbar-button-up,
+.nex-scrollbar-button-down,
+.nex-scrollbar-ct {
+	position:absolute;
+	cursor:default;
+}
+
+.nex-scrollbar-button-up,
+.nex-scrollbar-button-down {
+	background: red;	
+}
+
+.nex-scrollbar-track,
+.nex-scrollbar-thumb {
+	position:absolute;
+	z-index:1;
+	cursor:default;
+}
+
+.nex-scrollbar-track {
+	background: rgb(51, 51, 51);
+	opacity: 0.2;	
+	filter:alpha(opacity=20);
+}
+.nex-scrollbar-thumb {
+	background: rgb(0, 0, 0);
+	opacity: 0.4;
+	filter:alpha(opacity=40);
+}
+
+.nex-scrollbar-thumb {
+	z-index:2;
+}
+
+.nex-scrollbar-vertical {
+	height:100%;
+	width:100%;
+	.nex-scrollbar-button-up {
+		top:0;
+		width:100%;
+		height:7px;	
+	}
+	.nex-scrollbar-button-down {
+		width:100%;
+		height:7px;
+		bottom:0;	
+	}
+	.nex-scrollbar-ct {
+		top:0;
+		bottom:0;
+		width:100%;
+	}
+	.nex-scrollbar-thumb {
+		width:100%;
+		top:0px;
+	}
+	.nex-scrollbar-track {
+		height:100%;
+		width:100%;
+		top:0px;	
+	}		
+}
+
+.nex-scrollbar-horizontal {
+	width:100%;
+	height:100%;
+	.nex-scrollbar-button-up {
+		left:0;
+		height:100%;
+		width:7px;	
+	}
+	.nex-scrollbar-button-down {
+		height:100%;
+		width:7px;
+		right:0;	
+	}
+	.nex-scrollbar-ct {
+		left:0;
+		right:0;
+		height:100%;
+	}
+	.nex-scrollbar-track {
+		width:100%;	
+		height:100%;
+		left:0px;
+	}	
+	.nex-scrollbar-thumb {
+		height:100%;
+		left:0px;
+	}	
+}
+
+.nex-scroller-wrapper {
+	position:relative;
+}
+
+.nex-scroller {
+	position:absolute;
+	overflow:hidden;
+}

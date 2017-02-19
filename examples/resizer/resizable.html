@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%; "><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../jquery-ui.css">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+        
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0;">
+   <style>
+   .ui-resizable {
+		position: relative;
+	}
+   .ui-widget-content {
+	   position:absolute;
+    border: 1px solid #aaaaaa;
+    background: #ffffff url("images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
+    color: #222222;
+}
+  #resizable { width: 150px; height: 150px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  </style>
+   	<div id="resizable" class="ui-widget-content ui-resizable">
+      <h3 class="ui-widget-header">Resizable</h3>
+    </div>
+     <script type="text/javascript">
+	 $(function(){
+		 require(['Nex/jqueryui/resizable','Nex/jqueryui/draggable','Nex/jqueryui/effect'], function(){ //Nex/util/position
+			$( "#resizable" ).resizable();
+			$( "#resizable" ).draggable();
+			$( ".ui-widget-header" ).animate({
+				backgroundColor : 'red',
+				color : '#FFF'
+			}, 400)
+			.delay(1000)
+			.animate({
+					backgroundColor : 'transparent',
+					color : '#000'
+				}, 400)	
+			}) 
+	 });
+	 </script>
+     
+    </body>
+</html>

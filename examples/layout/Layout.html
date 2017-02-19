@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html style="height:100%; overflow:hidden;">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/Scroller.css">
+        <link rel="stylesheet" href="../../themes/default/layout/LayoutRegion.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+    </head>
+    <body style="height:100%; overflow:hidden;">
+    	<script type="text/javascript">
+		
+		require(['Nex/layout/Layout'], function(Layout){
+			layout = Layout.create({
+				renderTo : document.body,
+				layouts : ['north', 'south', 'west', 'east'],
+				onExpand : function(r){ console.log(r) },
+				onCollapse : function(r){ console.log(r) },
+				defaults : {
+					splitSize : 8,
+					html : '-----------------',
+					width : 260,
+					height : 100,
+					items : {
+						xtype : 'container', 
+						width : function(el){
+							return el.width() * .8;	
+						},
+						html : '00000',	
+						style : {
+							background : 'red'	
+						}
+					}	
+				},
+				west : {
+					collapsed : true,
+					maxWidth : 300,
+					minWidth : 100,
+				},
+				north : {
+					maxHeight : 300,
+					minHeight : 130,
+				}
+			})
+		});
+		
+		</script>
+    </body>
+</html>

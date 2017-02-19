@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Calendar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+		<script src="../../boot.js"></script>
+    </head>
+    <body>
+    
+    <script>
+	require(['Nex/date/Date'], function(date){
+		//console.log( date.parse );
+		var d = date.parse('2014-09-09s', 'Y-m-d\\s');	
+		console.log( d );
+		var d = date.parse('2014-09-09s36', 'Y-m-d\\sz');	
+		console.log( d );
+		var d = date.parse('2014-09-09+28800', 'Y-m-dZ');
+		console.log( d );
+		var d = date.parse('2014-09-09+09:30', 'Y-m-dP');
+		console.log( d );
+		var d = date.parse('1477056601', 'U');	
+		console.log( d );
+		mDate = date
+		
+	})
+	</script>
+    
+    </body>
+</html>

@@ -1,0 +1,124 @@
+.nex-window {
+  overflow: hidden;
+  display:block;
+}
+.nex-window,
+.nex-window-shadow {
+  position: absolute;
+  left:-99990px; 
+  top:-99990px;
+}
+
+
+.nex-window-modal {
+	position: absolute;
+	display:none;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	min-width:100%;
+	min-height:100%;
+	overflow:hidden;
+}
+
+.nex-window .nex-panel-header{
+
+}
+.nex-window-fixed,
+.nex-window-modal-fixed {
+	position: fixed;
+	_position:absolute;
+	_top: expression(documentElement.scrollTop + parseFloat(this.style.top) + "px");
+	_left: expression(documentElement.scrollLeft + parseFloat(this.style.left) + "px");
+}
+
+.nex-window-border {
+	border-collapse:separate;/*IE9下如果父元素如td 设置了border-collapse:collapse 那么box-shadow 会无效 ！！*/	
+	-webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+	-moz-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+ 
+}
+
+.nex-ielt9 .nex-panel-border {
+	border: 1px solid #EDEDED;
+}
+.nex-window-shadow {
+	border-collapse:separate;/*IE9下如果父元素如td 设置了border-collapse:collapse 那么box-shadow 会无效 ！！*/	
+	-webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+	-moz-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+}
+.nex-ielt9 .nex-window-shadow {
+  	/* For IE 8 */
+	/* For IE 5.5 - 7 */
+	/*在IE下因为有透明设置 会导致冲突无效*/
+	/*
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#2D2D30')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#2D2D30');
+	*/
+}
+.nex-window-maximized {
+	/*border-width:0 !important;*/
+}
+
+.nex-window-modal {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	filter: alpha(opacity=10);
+	opacity: .1;
+	font-size: 1px;
+	/**zoom: 1;*/
+	overflow: hidden;
+	display:none;
+}
+
+.nex-window-drag-modal {
+	filter: alpha(opacity=0);
+	opacity: 0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0px;
+	top:0px;
+	/*background:#000;*/
+}
+
+.nex-window-tmp-modal {
+	filter: alpha(opacity=0);
+	opacity: 0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0px;
+	top:0px;
+	background:#000;
+}
+
+.nex-window-dragging {
+	/*filter: alpha(opacity=80);
+	opacity: .8;*/
+}
+
+.nex-window-tools .tools-collapse-icon {
+	background: url('images/w_collapse.png') center no-repeat;
+}
+.nex-window-tools .tools-expand-icon {
+	background: url('images/w_expand.png') center no-repeat;
+}
+.nex-window-tools .tools-close-icon {
+	background: url('images/w_close.png') center no-repeat;
+}
+.nex-window-tools .tools-minimize-icon {
+	background: url('images/w_minixize.png') center no-repeat;
+}
+.nex-window-tools .tools-maximize-icon {
+	background: url('images/w_maxixize.png') center no-repeat;
+}
+.nex-window-tools .tools-restore-icon {
+	background: url('images/w_restore.png') center no-repeat;
+}

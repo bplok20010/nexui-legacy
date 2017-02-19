@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>继承测试</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+		
+    </head>
+    <body>
+    <script type="text/javascript">
+	
+	$(function(){
+		require(['Nex/core/Base', 'Nex/core/Nex'], function(Base, Nex){
+			B = Base.create();
+			B.initConfig({
+				mixins: [{
+					config : {
+						a: 6	
+					},
+					a : 2,
+					b : 3 	
+				},{
+					config : {
+						a: 7,
+						b: 6	
+					},
+					a : 21,
+					c : 2,
+					b : 3 	
+				}]	
+			});
+			//s = Nex.Base.creator({ a:4,b:4,c:4 },{ a:4,b:4,c:4 },3,'a','x');s({a:1,x:3}, { c:1,d:3 });
+			console.log(B);
+			
+			Nex.Class('MyBase', {
+				constructor : function(cfg, props){
+					//console.log('constructor')
+					this.initConfig(cfg, props);	
+				},
+				config : function(s){
+					//console.log(s, '12');
+					return {
+						props : {
+							age : '27',
+							sss : function(){
+								console.log(12314)	
+							}	
+						},
+						username : '123',
+						age : 26	
+					}	
+				},
+				username : 'nobo',
+				alert : function(){
+					console.log('alert');	
+				}	
+			});
+			
+			Nex.Class('MyBase2', 'MyBase', {
+				constructor : function(cfg, props){
+					//console.log('constructor')
+					this.initConfig(cfg, props);	
+				},
+				config : function(s){
+					//console.log(s, '12');
+					return {
+						props : {
+							age : '271',
+							sss : function(){
+								console.log(12314)	
+							}	
+						},
+						username : '123',
+						age : 26	
+					}	
+				},
+				username : 'nobo23',
+				alert : function(){
+					console.log('alert');	
+				}	
+			})
+			
+		});
+	});
+	
+	</script>
+    </body>
+</html>

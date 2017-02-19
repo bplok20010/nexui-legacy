@@ -1,0 +1,65 @@
+.nex-layoutregion {
+	position:absolute;
+	background:#FFF;	
+}
+
+.nex-layout-region-north,
+.nex-layout-region-south {
+	z-index:2;
+}
+.nex-layout-region-east,
+.nex-layout-region-west {
+	z-index:1;
+}
+.nex-layout-region-center {
+	z-index:0;
+}
+
+.nex-layout-border { border:1px solid #99bce8; }
+
+.nex-layout-split {
+	position:absolute;	
+	background: #E6EEF8;
+	cursor: e-resize;
+	z-index: 0;
+	overflow:hidden;
+}
+
+.nex-layout-split-north,
+.nex-layout-split-south {
+	cursor: n-resize;
+}
+
+.nex-layout-split-collapsed {
+	cursor: default;
+}
+
+.nex-layout-collapse-btn {
+	position:absolute;
+	background:#B1B1B1;
+	overflow:hidden;
+	cursor: pointer;
+}
+.nex-layout-collapse-btn-north,
+.nex-layout-collapse-btn-south {
+	width:35px;
+	height:100%;
+	left:50%;
+	top:0;
+	margin-left:-17.5px;	
+}
+.nex-layout-collapse-btn-east,
+.nex-layout-collapse-btn-west {
+	height:35px;
+	width:100%;
+	top:50%;
+	left:0;
+	margin-top:-17.5px;	
+}
+
+.nex-layout-body {
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:relative;	
+}

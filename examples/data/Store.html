@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%; overflow:hidden;"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+        <style>
+		  .drag { width: 150px; height: 150px; padding: 0.5em; border:1px solid #ccc; }
+		  </style>
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0; overflow:hidden;">
+    
+     <script type="text/javascript">
+	 function page(n) {
+		myStore.loadPage(n).done(function(data){ 
+			console.log( myStore.unWrapAll(data) ) 
+		}); 
+	 }
+	 $(function(){
+		 var data = [1,2,3,4,5,6,7,8,9,10];
+		 require(['Nex/data/Store'], function(Store){ 
+		 
+			myStore = Store.create({
+		 	
+				onBeforeFetch : function(params){
+					params.a = 6;
+					params.x = 7;
+					
+					console.log(params);
+				},
+				
+				request1 : function(p, s){
+					var start = (p.page - 1) * p.limit;
+					var end = start + p.limit;
+					console.log( arguments, 'request' );	
+					
+					return data.slice(start, end);
+				},
+				pageSize : null,
+				data : ['a','b','c','d'],
+				onChange : function(){
+					console.log(arguments);	
+				}	
+			});
+			
+			page(1)
+		 });	 
+	 });
+	 </script>
+    </body>
+</html>

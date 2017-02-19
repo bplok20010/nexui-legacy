@@ -1,0 +1,45 @@
+.nex-scroller-wrapper {
+	position:relative;
+}
+.nex-scrollbar {
+	position:absolute;	
+} 
+.nex-scrollbar-track,
+.nex-scrollbar-face {
+	position:absolute;
+	z-index:1;
+}
+
+.nex-scrollbar-track {
+	background: rgb(51, 51, 51);
+	opacity: 0.2;	
+	filter:alpha(opacity=20);
+}
+.nex-scrollbar-face {
+	background: rgb(0, 0, 0);
+	opacity: 0.4;
+	filter:alpha(opacity=40);
+}
+
+.nex-scrollbar-face {
+	z-index:2;
+}
+
+.nex-vscrollbar-track {
+	height:100%;	
+}
+.nex-hscrollbar-track {
+	width:100%;	
+}
+
+.nex-vscrollbar-track,
+.nex-vscrollbar-face {
+	width:100%;
+	top:0px;
+}
+
+.nex-hscrollbar-track,
+.nex-hscrollbar-face {
+	height:100%;
+	left:0px;
+}

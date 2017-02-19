@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html style="width:100%; height:100%; overflow:hidden;"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/form/form.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/Scroller.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+    </head>
+    <body style="width:100%; height:100%; padding:0; margin:0; overflow:hidden;">
+    <style type="text/css">
+	.db {
+		border:none;
+		background-color:transparent;
+		color: #000;	
+	}
+	input.disabled{
+border:0px solid #DDD;
+background-color:#F5F5F5;
+color:red;
+min-height:14px;
+}
+	</style>
+    
+    <button>全选</button><button>取消所有选中</button>
+    
+     <script type="text/javascript">
+	 function listbox(){
+		listbox.selectAll();		 
+	}
+	require.config({
+		urlArgs : 't='+(+new Date())	
+	});
+	 $(function(){
+		 require([
+		 	'Nex/form/ListBox'
+		], function(ListBox){ 
+			
+			var items = [];
+			
+			for( var i=0;i<500;i++ ) {
+				items.push({
+					text : 'aaaaaa'+i,
+					value : 'a'+i	
+				})	
+			}
+		//	console.time('a');
+			listbox = ListBox.create({
+				labelText : 'ListBox:',
+				//width : 250,
+				//height: 100,
+				//minWidth : 150,
+				//width : '30%',
+				tabIndex: 20,
+				showSearch : false,
+				height : '50%',
+				//width : '30%',
+				value : 'a4',
+				multiSelect : true,
+				itemFilter : function(data, index){
+					return index % 1 === 0	
+				},
+				itemFormatter1: function(text, data){
+					//console.log(arguments);
+					return '<img width=50 height=50 src="//miniui.com/images/icon1.png">'+ text;	
+				},
+				':onChange' : function(v){
+					console.log(v, $.type(v))	;
+				},
+				':onFocus' : function(v){
+					console.log('onFocusList')	
+				},
+				':onBlur' : function(v){
+					console.log('onBlurList')	
+				},
+				'onSelect' : function(v, d, index){
+					console.log(v, d, index)	
+				},
+				'onDeselect' : function(v, d, index){
+					console.log(v, d, index)	
+				},
+				items: items,
+				renderTo: document.body	 	
+			});
+			//console.timeEnd('a');
+			
+			setTimeout(function(){
+				console.time('a1')
+				//listbox.setSize('','')
+				console.timeEnd('a1')	
+				
+				console.time('a2')
+				//listbox.setSize('300','400')
+				console.timeEnd('a2')	
+			},2000);
+		 });	 
+	 });
+	 </script>
+    </body>
+</html>

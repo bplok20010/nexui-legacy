@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>boxSizing-各个jquery版本的设置和获取</title>
+<link rel="stylesheet" href="../../lib/qunit/qunit-1.23.1.css">
+<script src="../../lib/qunit/qunit-1.23.1.js"></script>
+
+<script src="../../lib/jquery/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+var $1 = jQuery;
+</script>
+<script src="../../lib/jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+var $2 = jQuery;
+</script>
+<script src="../../lib/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+var $3 = jQuery;
+</script>
+<script src="../../lib/jquery/jquery-1.11.1.custom.min.js"></script>
+<script type="text/javascript">
+var $4 = jQuery;
+</script>
+<script src="../../lib/jquery/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+var $5 = jQuery;
+</script>
+
+
+
+<style type='text/css'>
+	.demo {
+		width : 100px;
+		height : 100px;
+		padding : 10px;
+		border : 5px solid red;
+		-webkit-box-sizing : border-box;
+		box-sizing : border-box;
+	}
+	.demo1 {
+		padding : 10px;
+		border : 5px solid red;
+	}
+</style>
+
+</head>
+
+<body>
+<div id="container" style=" overflow:hidden; height:0;">
+
+	<div id="demox" class="demo1">adfafa</div>
+
+	<div id="demo" class="demo"></div>
+    
+    <div id="demo1" class="demo"></div>
+    <div id="demo2" class="demo"></div>
+    <div id="demo3" class="demo"></div>
+    <div id="demo4" class="demo"></div>
+    <div id="demo5" class="demo"></div>
+
+</div>
+
+<h1 id="qunit-header">QUnit 各个jquery版本的设置和获取</h1>
+<h2 id="qunit-banner"></h2>
+<ol id="qunit-tests"></ol>
+
+<script>
+QUnit.test("get height", function( assert ) {
+  	function height( $ ){
+		return $('#demo').height();
+	}
+  	assert.equal(height( $1 ), 70, 'okay:border-box和border-content在jQuery下通过height获取效果一致');
+	assert.equal(height( $2 ), 70, 'okay:border-box和border-content在jQuery下通过height获取效果一致');
+	assert.equal(height( $3 ), 70, 'okay:border-box和border-content在jQuery下通过height获取效果一致');
+	assert.equal(height( $4 ), 70, 'okay:border-box和border-content在jQuery下通过height获取效果一致');
+	assert.equal(height( $5 ), 70, 'okay:border-box和border-content在jQuery下通过height获取效果一致');
+}); 
+QUnit.test("get outerHeight", function( assert ) {
+  	function outerHeight( $ ){
+		return $('#demo').outerHeight();
+	}
+  	assert.equal(outerHeight( $1 ), 100, 'okay:border-box和border-content在jQuery下通过outerHeight获取效果一致');
+	assert.equal(outerHeight( $2 ), 100, 'okay:border-box和border-content在jQuery下通过outerHeight获取效果一致');
+	assert.equal(outerHeight( $3 ), 100, 'okay:border-box和border-content在jQuery下通过outerHeight获取效果一致');
+	assert.equal(outerHeight( $4 ), 100, 'okay:border-box和border-content在jQuery下通过outerHeight获取效果一致');
+	assert.equal(outerHeight( $5 ), 100, 'okay:border-box和border-content在jQuery下通过outerHeight获取效果一致');
+}); 
+QUnit.test("get width", function( assert ) {
+  	function width( $ ){
+		return $('#demo').width();
+	}
+  	assert.equal(width( $1 ), 70, 'okay:border-box和border-content在jQuery下通过width获取效果一致');
+	assert.equal(width( $2 ), 70, 'okay:border-box和border-content在jQuery下通过width获取效果一致');
+	assert.equal(width( $3 ), 70, 'okay:border-box和border-content在jQuery下通过width获取效果一致');
+	assert.equal(width( $4 ), 70, 'okay:border-box和border-content在jQuery下通过width获取效果一致');
+	assert.equal(width( $5 ), 70, 'okay:border-box和border-content在jQuery下通过width获取效果一致');
+});
+QUnit.test("get outerWidth", function( assert ) {
+  	function outerWidth( $ ){
+		return $('#demo').outerWidth();
+	}
+  	assert.equal(outerWidth( $1 ), 100, 'okay:border-box和border-content在jQuery下通过outerWidth获取效果一致');
+	assert.equal(outerWidth( $2 ), 100, 'okay:border-box和border-content在jQuery下通过outerWidth获取效果一致');
+	assert.equal(outerWidth( $3 ), 100, 'okay:border-box和border-content在jQuery下通过outerWidth获取效果一致');
+	assert.equal(outerWidth( $4 ), 100, 'okay:border-box和border-content在jQuery下通过outerWidth获取效果一致');
+	assert.equal(outerWidth( $5 ), 100, 'okay:border-box和border-content在jQuery下通过outerWidth获取效果一致');
+}); 
+QUnit.test("set height", function( assert ) {
+  	function height( el, h ){
+		el.height(h);
+		return el.height();
+	}
+  	assert.equal(height( $1(demo1), 120 ), 120, 'okay:border-box和border-content在jQuery下通过height设置效果一致，只设置content的内容');
+	assert.equal(height( $2(demo2), 120 ), 120, 'okay:border-box和border-content在jQuery下通过height设置效果一致，只设置content的内容');
+	assert.equal(height( $3(demo3), 120 ), 120, 'okay:border-box和border-content在jQuery下通过height设置效果一致，只设置content的内容');
+	assert.equal(height( $4(demo4), 120 ), 120, 'okay:border-box和border-content在jQuery下通过height设置效果一致，只设置content的内容');
+	assert.equal(height( $5(demo5), 120 ), 120, 'okay:border-box和border-content在jQuery下通过height设置效果一致，只设置content的内容');
+	
+	assert.equal($1(demo1).css('height'), '150px', 'okay: border-box通过css直接设置height相当于使用outerHeight');
+	assert.equal($2(demo2).css('height'), '150px', 'okay: border-box通过css直接设置height相当于使用outerHeight');
+	assert.equal($3(demo3).css('height'), '150px', 'okay: border-box通过css直接设置height相当于使用outerHeight');
+	assert.equal($4(demo4).css('height'), '150px', 'okay: border-box通过css直接设置height相当于使用outerHeight');
+	assert.equal($5(demo5).css('height'), '150px', 'okay: border-box通过css直接设置height相当于使用outerHeight');
+	
+	assert.equal($1(demo1).outerHeight(), 150);
+	assert.equal($1(demo2).outerHeight(), 150);
+	assert.equal($1(demo3).outerHeight(), 150);
+	assert.equal($1(demo4).outerHeight(), 150);
+	assert.equal($1(demo5).outerHeight(), 150);
+}); 
+QUnit.test("set width", function( assert ) {
+  	function width( el, h ){
+		el.width(h);
+		return el.width();
+	}
+  	assert.equal(width( $1(demo1), 120 ), 120, 'okay:border-box和border-content在jQuery下通过width设置效果一致，只设置content的内容');
+	assert.equal(width( $2(demo2), 120 ), 120, 'okay:border-box和border-content在jQuery下通过width设置效果一致，只设置content的内容');
+	assert.equal(width( $3(demo3), 120 ), 120, 'okay:border-box和border-content在jQuery下通过width设置效果一致，只设置content的内容');
+	assert.equal(width( $4(demo4), 120 ), 120, 'okay:border-box和border-content在jQuery下通过width设置效果一致，只设置content的内容');
+	assert.equal(width( $5(demo5), 120 ), 120, 'okay:border-box和border-content在jQuery下通过width设置效果一致，只设置content的内容');
+	
+	assert.equal($1(demo1).css('width'), '150px', 'okay: border-box通过css直接设置width相当于使用outerWidth');
+	assert.equal($2(demo2).css('width'), '150px', 'okay: border-box通过css直接设置width相当于使用outerWidth');
+	assert.equal($3(demo3).css('width'), '150px', 'okay: border-box通过css直接设置width相当于使用outerWidth');
+	assert.equal($4(demo4).css('width'), '150px', 'okay: border-box通过css直接设置width相当于使用outerWidth');
+	assert.equal($5(demo5).css('width'), '150px', 'okay: border-box通过css直接设置width相当于使用outerWidth');
+	
+	assert.equal($1(demo1).outerWidth(), 150);
+	assert.equal($1(demo2).outerWidth(), 150);
+	assert.equal($1(demo3).outerWidth(), 150);
+	assert.equal($1(demo4).outerWidth(), 150);
+	assert.equal($1(demo5).outerWidth(), 150);
+}); 
+
+QUnit.test("set outerWidth", function( assert ) {
+  	function outerWidth( el, h ){
+		el.outerWidth(h);
+		return el.outerWidth();
+	}
+	
+  	assert.equal(outerWidth( $1(demo1), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerWidth设置效果一致');
+	assert.equal(outerWidth( $2(demo2), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerWidth设置效果一致');
+	assert.equal(outerWidth( $3(demo3), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerWidth设置效果一致');
+	assert.equal(outerWidth( $4(demo4), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerWidth设置效果一致');
+	assert.equal(outerWidth( $5(demo5), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerWidth设置效果一致');
+	
+});
+
+QUnit.test("set outerHeight", function( assert ) {
+  	function outerHeight( el, h ){
+		el.outerHeight(h);
+		return el.outerHeight();
+	}
+	
+  	assert.equal(outerHeight( $1(demo1), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerHeight设置效果一致');
+	assert.equal(outerHeight( $2(demo2), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerHeight设置效果一致');
+	assert.equal(outerHeight( $3(demo3), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerHeight设置效果一致');
+	assert.equal(outerHeight( $4(demo4), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerHeight设置效果一致');
+	assert.equal(outerHeight( $5(demo5), 120 ), 120, 'okay:border-box和border-content在jQuery下通过outerHeight设置效果一致');
+	
+});
+
+QUnit.test("set css width", function( assert ) {
+  	function outerWidth( el, h ){
+		el.css('width', h);
+		return el.outerWidth();
+	}
+	
+  	assert.equal(outerWidth( $1(demo1), 121 ), 121, 'okay:border-box后直接设置css width相当于outerWidth');
+	assert.equal(outerWidth( $2(demo2), 121 ), 121, 'okay:border-box后直接设置css width相当于outerWidth');
+	assert.equal(outerWidth( $3(demo3), 121 ), 121, 'okay:border-box后直接设置css width相当于outerWidth');
+	assert.equal(outerWidth( $4(demo4), 121 ), 121, 'okay:border-box后直接设置css width相当于outerWidth');
+	assert.equal(outerWidth( $5(demo5), 121 ), 121, 'okay:border-box后直接设置css width相当于outerWidth');
+	
+});
+
+QUnit.test("get css width", function( assert ) {
+  	function width( el, h ){
+		el.width(h);
+		return parseFloat(el.css('width'));
+	}
+	
+  	assert.equal(width( $1(demo1), 122 ), 152, 'okay:border-box后直接获取css width相当于outerWidth');
+	assert.equal(width( $2(demo2), 122 ), 152, 'okay:border-box后直接获取css width相当于outerWidth');
+	assert.equal(width( $3(demo3), 122 ), 152, 'okay:border-box后直接获取css width相当于outerWidth');
+	assert.equal(width( $4(demo4), 122 ), 152, 'okay:border-box后直接获取css width相当于outerWidth');
+	assert.equal(width( $5(demo5), 122 ), 152, 'okay:border-box后直接获取css width相当于outerWidth');
+	
+});
+
+QUnit.test("set css height", function( assert ) {
+  	function outerHeight( el, h ){
+		el.css('height', h);
+		return el.outerHeight();
+	}
+	
+  	assert.equal(outerHeight( $1(demo1), 120 ), 120, 'okay:border-box后直接设置css height相当于outerHeight');
+	assert.equal(outerHeight( $2(demo2), 120 ), 120, 'okay:border-box后直接设置css height相当于outerHeight');
+	assert.equal(outerHeight( $3(demo3), 120 ), 120, 'okay:border-box后直接设置css height相当于outerHeight');
+	assert.equal(outerHeight( $4(demo4), 120 ), 120, 'okay:border-box后直接设置css height相当于outerHeight');
+	assert.equal(outerHeight( $5(demo5), 120 ), 120, 'okay:border-box后直接设置css height相当于outerHeight');
+	
+});
+
+QUnit.test("get css height", function( assert ) {
+  	function height( el, h ){
+		el.height(h);
+		return parseFloat(el.css('height'));
+	}
+	
+  	assert.equal(height( $1(demo1), 120 ), 150, 'okay:border-box后直接获取css height相当于outerHeight');
+	assert.equal(height( $2(demo2), 120 ), 150, 'okay:border-box后直接获取css height相当于outerHeight');
+	assert.equal(height( $3(demo3), 120 ), 150, 'okay:border-box后直接获取css height相当于outerHeight');
+	assert.equal(height( $4(demo4), 120 ), 150, 'okay:border-box后直接获取css height相当于outerHeight');
+	assert.equal(height( $5(demo5), 120 ), 150, 'okay:border-box后直接获取css height相当于outerHeight');
+	
+});
+
+QUnit.test("get border-content css height/width", function( assert ) {
+  	function size( el, h ){
+		return parseFloat(el.css('height'));
+	}
+	
+  	assert.equal(size( $1(demox) ), $1(demox).height(), 'okay:border-content后直接获取css height相当于height');
+	assert.equal(size( $2(demox) ), $1(demox).height(), 'okay:border-content后直接获取css height相当于height');
+	assert.equal(size( $3(demox) ), $1(demox).height(), 'okay:border-content后直接获取css height相当于height');
+	assert.equal(size( $4(demox) ), $1(demox).height(), 'okay:border-content后直接获取css height相当于height');
+	assert.equal(size( $5(demox) ), $1(demox).height(), 'okay:border-content后直接获取css height相当于height');
+	
+});
+</script>
+
+</body>
+</html>

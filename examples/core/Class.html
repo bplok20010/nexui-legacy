@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>继承测试</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        <script src="../asset/js/jquery.min.js"></script>
+        <script src="../../boot.js"></script>
+		
+    </head>
+    <body>
+    <script type="text/javascript">
+	
+	$(function(){
+		require(['Nex/core/Class'], function(Class){
+			X = Class('X', {
+				config : function(){
+					return {
+						t : 1	
+					};	
+				},
+				a : 4,
+				b : 5,
+				test : function(){
+					this._super();
+					console.log( 'X' )	
+				}	
+			});
+			X1 = Class('X1', 'X', {
+				mixins : [
+					{
+						a : 1,
+						c: 1,
+						config : {
+							r : 1,
+							t :　1	
+						}	
+					}
+				],
+				config : function(opt){
+					return {
+						t : 2,
+						g : 3	
+					};	
+				},
+				a : 45,
+				z : 'adf',
+				b : 5,
+				test : function(){
+					this._super();
+					console.log( 'X1' )	
+				}	
+			});
+			
+			X2 = Class('X2', 'X1', {
+				test : function(){
+					this._super();
+					console.log( 'X2' )	
+				}	
+			});
+		});
+	});
+	
+	</script>
+    </body>
+</html>

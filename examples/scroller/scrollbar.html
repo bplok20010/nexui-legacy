@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html style=""><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Component</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <link rel="stylesheet" href="../../themes/default/nex.css">
+        <link rel="stylesheet" href="../../themes/default/scroller/scrollbar.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+        
+        <script src="../../boot.js"></script>
+        <script src="../asset/js/jquery.min.js"></script>
+        <script type="text/javascript">
+		 $(function(){
+			require([
+				'Nex/scroller/ScrollBar'
+			], function(scroller){ 
+				s1 = scroller.create({
+					el : $('#scrollerCt'),
+					//showTrack : false,
+					thumbSize : 20,
+					height : 150,
+					width : 20,
+					renderTo : '#test'
+				});
+				s2 = scroller.create({
+					el : $('#scrollerCt'),
+					height : 20,
+					thumbSize : 20,
+					scrollType : 'h',
+					renderTo : '#test'
+				});
+			});	
+			
+			$('#test').on('mousewheel', function(e){
+				//console.log(e);	
+				//return false;
+			})
+			
+		 });
+		 </script>
+         
+    </head>
+    <body style="">
+    
+    <div style="width:300px; height:300px; background:#F9F9F9; position: absolute; right:50px;" id="test"></div>
+    
+    <div class="scoller-wrap" style="position:relative; margin-top:50px; width:500px; border:1px solid red; ">
+        	<div id="scrollerCt" class="scroller-container" style=" padding:10px; overflow: hidden; margin:10px; border:10px solid green; background:#F5F5F5; height:300px; ">
+            	<div style="width:9000px;" id="content">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+             
+              
+               
+                <p>Aliquam consequat. Proin feugiat ultricies dui. Suspendisse mollis dui nec nunc. Nam tristique, ante vitae imperdiet vestibulum, elit nulla rhoncus nisl, vitae tincidunt dolor dui eu mi. In hac habitasse platea dictumst. Nunc blandit dolor vel mauris. Proin wisi. Nam pharetra ultrices tellus. Sed arcu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam ultricies semper wisi. Sed nisl. Donec blandit. Nunc vitae urna sed nisl mattis ornare.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis, ante et congue feugiat, elit wisi commodo metus, ut commodo ligula enim ac justo. Pellentesque id ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Phasellus vitae mi a elit dictum volutpat. Pellentesque nec arcu. Etiam blandit. Phasellus egestas dolor ut lacus. Sed enim justo, sagittis ut, condimentum non, ullamcorper eu, neque. In hac habitasse platea dictumst. Integer ipsum risus, sagittis ac, imperdiet ac, interdum sed, libero. Praesent commodo. Mauris congue, urna eget hendrerit elementum, dolor ligula ultrices neque, in elementum ante erat et elit.</p>
+                end
+            </div>
+            <!--<div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+            <div class="slimScrollBar" id="scrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 65.9824px; background: rgb(0, 0, 0);"></div>-->
+        </div>
+        
+    </body>
+</html>
